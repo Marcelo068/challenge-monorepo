@@ -1,0 +1,13 @@
+input.ng-invalid.ng-touched {
+  background-color: red !important;
+}
+
+/* remove arrow of input type number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield !important;
+}

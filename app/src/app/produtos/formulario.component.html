@@ -1,0 +1,35 @@
+<form class="container pt-5" [formGroup]="formProdutos">
+  <div class="row">
+    <div class="col">
+      <h1>{{ title }}</h1>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="d-flex flex-column col-12 mb-3">
+      <label for="nome">Nome</label>
+      <input type="text" id='nome' formControlName="nome" class="form-control shadow-none">
+      <app-input-validation [form]="formProdutos.controls['nome']"></app-input-validation>
+    </div>
+    <div class="d-flex flex-column col-12 mb-3">
+      <label for="preco">Preço</label>
+      <input type="number" id='preco' formControlName="preco" class="form-control shadow-none">
+      <app-input-validation [form]="formProdutos.controls['preco']"></app-input-validation>
+    </div>
+    <div class="d-flex flex-column col-12 mb-3">
+      <label for="quantidade">Quantidade</label>
+      <input type="number" id='quantidade' formControlName="quantidade" class="form-control shadow-none">
+      <app-input-validation [form]="formProdutos.controls['quantidade']"></app-input-validation>
+    </div>
+    <div class="d-flex flex-column col-12 mb-3">
+      <label for="descricao">Descrição</label>
+      <input type="text" id='descricao' formControlName="descricao" class="form-control shadow-none">
+      <app-input-validation [form]="formProdutos.controls['descricao']"></app-input-validation>
+    </div>
+    <div>
+      <p>(*) Campos obrigatórios!</p>
+    </div>
+    <div class="col-12 col-lg-4">
+      <button type="submit" class="btn btn-primary w-100" (click)='submit()' [disabled]="!formProdutos.valid">Confirmar</button>
+    </div>
+  </div>
+</form>

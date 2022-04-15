@@ -1,0 +1,8 @@
+<div *ngIf="form.invalid && (form.dirty || form.touched)" class="mt-1">
+  <div *ngIf="form.errors.required">
+    <span class="error-color">Campo obrigatório.</span>
+  </div>
+  <div *ngIf="form.errors.maxlength">
+    <span class="error-color">Tamanho máximo atingido.</span>
+  </div>
+</div>

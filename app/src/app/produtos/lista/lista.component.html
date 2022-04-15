@@ -1,0 +1,69 @@
+<div class="container table-list mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-between pb-2">
+        <h1>Produtos</h1>
+        <a routerLink="/produtos/criar" class="btn btn-primary d-flex justify-content-center align-items-center">Adicionar</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let element">
+            <div>{{element.id}}</div>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+          <td mat-cell *matCellDef="let element">
+            <div>{{element.nome}}</div>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="preco">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Preço </th>
+          <td mat-cell *matCellDef="let element">
+            <div>{{element.preco}}</div>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="quantidade">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantidade </th>
+          <td mat-cell *matCellDef="let element">
+            <div>{{element.quantidade}}</div>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="descricao">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
+          <td mat-cell *matCellDef="let element">
+            <div>{{element.descricao}}</div>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="acao">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element; let i = index">
+            <div class="position-relative">
+              <button (click)="handleClick(i)" class="btn-default"><img src="assets/icons/acao.svg" alt="Icone de Ação"></button>
+              <app-options [index]="i" [id]="[element.id]" [itemToDisplay]="displayOptions" [excluir]="excluir"></app-options>
+            </div>
+          </td> 
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div class="pt-5 pb-4 w-100 d-flex justify-content-center" *ngIf="dataSource.filteredData.length === 0">
+        Nenhum registro encontrado
+      </div>
+      <mat-paginator [length]="paginationLength" [pageSize]="fetch" [pageIndex]="offSet/fetch"
+        [pageSizeOptions]="pageSizeOptions" showFirstLastButtons="true" (page)="handlePagination($event)">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

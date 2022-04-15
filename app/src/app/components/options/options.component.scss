@@ -1,0 +1,17 @@
+.force-display{
+  display: flex !important;
+}
+
+.options-container{
+  z-index: 999;
+  top: 0;
+  right: 100%;
+  min-width: 127px;
+  position: absolute;
+  background: #FFFFFF;
+  box-shadow: 0px 6px 23px rgba(0, 0, 0, 0.33);
+  border-radius: 5px;
+  .options-hover:hover{
+    background-color: lightcyan
+  }
+}

@@ -1,0 +1,26 @@
+.table-list {
+  table {
+    width: 100%;
+  }
+
+  tr.mat-row,
+  tr.mat-footer-row {
+    height: 90px !important;
+    cursor: pointer;
+  }
+
+  .mat-header-cell {
+    font-size: 14px;
+  }
+
+  tr.mat-row:hover { 
+    background-color: lightcyan;
+    cursor: pointer;
+  }
+}
+
+.btn-default {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}

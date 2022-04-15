@@ -1,0 +1,12 @@
+<div [ngClass]="{'force-display': itemToDisplay === index }" class="position-absolute d-none flex-column align-items-center options-container py-1" >
+  <div class="d-flex justify-content-start pl-3 p-2 w-100 options-hover" (click)="editar()">
+    <div>
+      <span class="pl-2">Editar</span>
+    </div>
+  </div>
+  <div class="d-flex justify-content-start pl-3 p-2 w-100 options-hover" (click)="excluir(id)">
+    <div>
+      <span class="pl-2">Excluir</span>
+    </div>
+  </div>
+</div>
